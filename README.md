@@ -1,5 +1,19 @@
 # UserDashboard
+The **Dynamic User Dashboard** is an Angular 18 web application designed to manage and view user data. It features a user list with pagination, detailed user views, search functionality, and advanced state management with NgRx. The application integrates with the ReqRes API to fetch user information and uses Angular Material for a polished UI.
 
+## Features
+
+- **Paginated User List**: View users with pagination.
+- **User Details**: Detailed view of selected user including profile picture, name, and email.
+- **Search Functionality**: Search users by ID.
+- **Navigation**: Smooth transitions between user list and user detail views.
+- **State Management**: Managed with NgRx.
+- **Custom Styling**: Angular Material and custom CSS.
+- **Loading Indicator**: Shows loading state while data is fetched.
+- **Caching**: Implemented for performance improvements.
+
+![preview img](./public/users.PNG)
+![preview img](./public/users.PNG)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
 
 ## Development server
