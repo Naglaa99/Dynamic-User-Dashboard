@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="user-details-card">
+    <h1>User Details</h1>
+
+    <mat-card>
+      <mat-card-content>
+        <div class="avatar-container">
+          <img mat-card-image [src]="userDetails?.avatar" alt="User Image" />
+        </div>
+      </mat-card-content>
+      <mat-card-title>
+        <p><span>User ID : </span> {{ userDetails?.id }}</p>
+        <p>
+          <span>Full Name : </span>{{ userDetails?.first_name }}
+          {{ userDetails?.last_name }}
+        </p>
+        <p><span>Email ID : </span>{{ userDetails?.email }}</p>
+      </mat-card-title>
+    </mat-card>
+    <div class="btn">
+      <button (click)="goBack()">Go back to Dashboard</button>
+    </div>
+  </div>
+</div>

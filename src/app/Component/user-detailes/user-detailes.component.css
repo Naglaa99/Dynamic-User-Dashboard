@@ -1,0 +1,42 @@
+.card-container {
+  padding: 50px 20px 10px 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.user-card {
+  display: flex;
+  flex-direction: column;
+}
+mat-card {
+  max-width: 280px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+mat-card-content img {
+  border-radius: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.paginator-container {
+  margin-top: 20px;
+  width: 100%;
+}
+.paginator-container mat-paginator {
+  color: rgb(192, 77, 161);
+  display: flex;
+  justify-content: center;
+}
+mat-card:hover {
+  background-color: rgb(255, 227, 250);
+  cursor: pointer;
+  transition: 0.7s;
+}
+mat-card-title {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #565656;
+}

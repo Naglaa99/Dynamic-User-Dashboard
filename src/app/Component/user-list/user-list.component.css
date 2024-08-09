@@ -1,0 +1,61 @@
+h1{
+ margin: 50px;
+ text-align: center;
+ color: rgb(127, 15, 110);
+}
+mat-card{
+    width: 50%;
+    height: 50vh;
+   margin: auto;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   
+}
+mat-card:hover{
+    background-color: rgb(255, 227, 250);
+    cursor: pointer;
+    transition: 0.7s;
+}
+mat-card-content{
+   max-width: 230px;
+}
+mat-card-content img{
+    width: 100%;
+    border-radius: 50%;
+    margin-top: 60px;
+   margin-left: 30px;
+}
+mat-card-title{
+    margin: auto;
+    padding: 15px;
+}
+mat-card-title p{
+   margin-top: 30px ;
+   font-size: 18px;
+   font-weight: 500;
+   color: rgb(72, 72, 72);
+
+}
+span{
+    color:#d10866;
+    font-weight: 600;
+}
+mat-button{
+    align-items: center;
+}
+.btn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+.btn button{
+    padding: 10px;
+    width: 50%;
+    border-radius: 9999px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg,  #d10866, #d2d1d1); 
+}

@@ -1,0 +1,46 @@
+<div class="container">
+  <!-- Display user details if a user is selected by search -->
+  <div *ngIf="userDetails" class="user-details">
+    <mat-card class="user-card">
+      <mat-card-content>
+        <img [src]="userDetails.avatar" alt="{{ userDetails.first_name }}" />
+        <p>{{ userDetails.email }}</p>
+      </mat-card-content>
+      <mat-card-header>
+        <mat-card-title
+          >{{ userDetails.first_name }}
+          {{ userDetails.last_name }}</mat-card-title
+        >
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <!-- Display user cards if no user is selected -->
+  <div *ngIf="!userDetails" class="card-container">
+    <mat-card
+      *ngFor="let user of users"
+      class="user-card"
+      (click)="navigateToUserDetails(user.id)"
+    >
+      <mat-card-content>
+        <img [src]="user.avatar" alt="{{ user.first_name }}" />
+      </mat-card-content>
+      <mat-card-header>
+        <mat-card-title
+          >{{ user.first_name }} {{ user.last_name }}</mat-card-title
+        >
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <!-- Pagination controls -->
+  <div *ngIf="!userDetails" class="paginator-container bg-light">
+    <mat-paginator
+      [length]="totalUsers"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>
