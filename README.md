@@ -13,7 +13,7 @@ The **Dynamic User Dashboard** is an Angular 18 web application designed to mana
 - **Caching**: Implemented for performance improvements.
 
 ![preview img](./public/users.PNG)
-![preview img](./public/users.PNG)
+![preview img](./public/user-detail.PNG)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
 
 ## Development server
