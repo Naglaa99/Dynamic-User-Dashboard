@@ -1,22 +1,40 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { UserResponse } from '../Models/user-response';
-import { SingleUser } from '../Models/single-user';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { CacheService } from './cash-service.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserDetailsService {
-  private apiUrl = 'https://reqres.in/api/users';
+  private baseUrl = 'https://reqres.in/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cacheService: CacheService) {}
 
-  getUsers(page: number): Observable<UserResponse> {
-    return this.http.get<UserResponse>(`${this.apiUrl}?page=${page}`);
+  getUser(id: number): Observable<any> {
+    const url = `${this.baseUrl}/users/${id}`;
+
+    const cachedResponse = this.cacheService.get(url);
+    if (cachedResponse) {
+      return of(cachedResponse);
+    }
+
+    return this.http
+      .get<any>(url)
+      .pipe(tap((response) => this.cacheService.put(url, response)));
   }
 
-  getUserById(id: number): Observable<SingleUser> {
-    return this.http.get<SingleUser>(`${this.apiUrl}/${id}`);
+  getUsers(page: number): Observable<any> {
+    const url = `${this.baseUrl}/users?page=${page}`;
+
+    const cachedResponse = this.cacheService.get(url);
+    if (cachedResponse) {
+      return of(cachedResponse);
+    }
+
+    return this.http
+      .get<any>(url)
+      .pipe(tap((response) => this.cacheService.put(url, response)));
   }
 }
